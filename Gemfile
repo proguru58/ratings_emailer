@@ -19,6 +19,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Use Devise for authentication
 gem 'devise', '~> 4.2.0'
+gem 'devise-bootstrap-views', '~> 0.0.9'
+
+# Use bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
