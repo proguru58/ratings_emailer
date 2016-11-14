@@ -24,6 +24,9 @@ gem 'devise-bootstrap-views', '~> 0.0.9'
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Form
+gem 'simple_form'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

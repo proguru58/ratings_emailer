@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'rating_email/index'
+  post 'rating_email/send_email'
+
   devise_for :users
   get 'home/index'
 

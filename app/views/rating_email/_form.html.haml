@@ -1,0 +1,9 @@
+= simple_form_for(:rating_email, url: rating_email_send_email_path) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :html, input_html: {class: "codemirror"}
+
+  .form-actions
+    = f.button :submit, class: 'btn-primary'
