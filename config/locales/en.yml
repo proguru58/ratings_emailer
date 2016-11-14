@@ -23,3 +23,13 @@ en:
   hello: "Hello world"
   brand:
     name: "Ratings Emailer"
+  account:
+    edit:
+      link: Account
+  auth:
+    signup:
+      link: Signup
+    logout:
+      link: Logout
+    login:
+      link: Login
