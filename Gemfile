@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.2.0'
 gem 'devise-bootstrap-views', '~> 0.0.9'
 
+# Email provider
+gem 'aws-ses', '~> 0.6.0', require: 'aws/ses'
+
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 

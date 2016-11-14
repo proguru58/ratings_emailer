@@ -1,5 +1,5 @@
 class RatingsMailer < ApplicationMailer
-  def send_email(options={})
+  def send_ratings(options={})
     @name = options[:name]
     @email = options[:email]
     @message = options[:message]
