@@ -3,10 +3,8 @@ class RatingEmailController < ApplicationController
   end
 
   def send_email
-    content = params[:ratings_email][:html]
-    params[:ratings_email][:emails].split(",").map do |s|
-      RatingsMailer.send_ratings(name: params[:name], email: s, to: s, message: content).deliver
-    end
+    content = params[:rating_email][:html]
+    RatingsMailer.send_ratings(current_user.email, params[:rating_email][:emails], content).deliver
 
     flash[:notice] = '5 Stars rating email sent'
     redirect_to rating_email_index_path
