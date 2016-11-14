@@ -2,8 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :html, input_html: {class: "codemirror"}
+    = f.input :emails
+    = f.input :html, input_html: {class: "codemirror"}, as: :text
 
   .form-actions
     = f.button :submit, class: 'btn-primary'

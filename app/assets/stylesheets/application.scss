@@ -17,6 +17,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import 'codemirror';
+@import 'codemirror/themes/night';
+.CodeMirror {
+  border: 1px solid #eee;
+  min-height: 300px;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
 body {
   padding-top: 70px;
 }

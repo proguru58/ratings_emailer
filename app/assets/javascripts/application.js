@@ -14,4 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require codemirror
+//= require codemirror/modes/xml
 //= require_tree .
+
+$(function() {
+  return $("textarea.codemirror").each(function() {
+    var disabled;
+    if ($(this).data('disabled')) {
+      disabled = true;
+    } else {
+      disabled = false;
+    }
+    CodeMirror.fromTextArea($(this).get(0), {
+      lineNumbers: true,
+      mode: "xml",
+      htmlMode: true,
+      theme: 'night',
+      readOnly: disabled
+    });
+  });
+});
