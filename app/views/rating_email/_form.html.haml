@@ -2,27 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :emails
-    = f.input :html, input_html: {class: "codemirror"}, as: :text
+    = f.input :emails, label: 'Email Address'
+    = f.input :subject, label: 'Subject'
+    = f.cktext_area :html, ckeditor: { language: 'us'}
 
   .form-actions
     = f.button :submit, class: 'btn-primary'
-
-:javascript
-  $(function() {
-    return $("textarea.codemirror").each(function() {
-      var disabled;
-      if ($(this).data('disabled')) {
-        disabled = true;
-      } else {
-        disabled = false;
-      }
-      CodeMirror.fromTextArea($(this).get(0), {
-        lineNumbers: true,
-        mode: "xml",
-        htmlMode: true,
-        theme: 'night',
-        readOnly: disabled
-      });
-    });
-  });

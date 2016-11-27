@@ -31,7 +31,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 
 # HTML input box
-gem 'codemirror-rails'
+gem 'ckeditor', '4.1.3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
