@@ -4,7 +4,12 @@
   .form-inputs
     = f.input :emails, label: 'Email Address'
     = f.input :subject, label: 'Subject'
-    = f.cktext_area :html, ckeditor: { language: 'us'}
+    = f.cktext_area :html, ckeditor: { language: 'us'}, id: 'ckeditor'
 
   .form-actions
     = f.button :submit, class: 'btn-primary'
+
+:javascript
+  $(document).on("turbolinks:load", function () {
+    CKEDITOR.replace("ckeditor");
+  });
