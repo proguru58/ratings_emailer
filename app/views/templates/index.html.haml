@@ -1,12 +1,13 @@
 .container
   .col-sm-10.col-sm-offset-1.col-xs-12.blog-content
-    - @templates.each do |post|
+    - @templates.each do |template|
       .col-xs-12
         .text-center
-          %h2= post.title
-          %h6= post.created_at.strftime('%b %d, %Y')
+          %h2= template.title
+          %h6= template.created_at.strftime('%b %d, %Y')
         %div
-          = post.body
+          = template.body
         .text-center
-          = link_to "READ MORE", post_path(post)
+          = link_to "READ MORE", template_path(template)
         %br/
+  = link_to "New Template", new_template_path
