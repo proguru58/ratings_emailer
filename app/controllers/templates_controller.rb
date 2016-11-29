@@ -14,7 +14,7 @@ class TemplatesController < ApplicationController
   # Create action saves the template into database
   def create
     @template = Template.new
-    if @template.save(template_params)
+    if @template.update(template_params)
       flash[:notice] = "Successfully created template!"
       redirect_to template_path(@template)
     else
@@ -31,7 +31,7 @@ class TemplatesController < ApplicationController
   def update
     if @template.update_attributes(template_params)
       flash[:notice] = "Successfully updated template!"
-      redirect_to template_path(@templates)
+      redirect_to template_path(@template)
     else
       flash[:alert] = "Error updating template!"
       render :edit
