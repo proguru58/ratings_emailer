@@ -1,10 +1,10 @@
-= simple_form_for @post do |f|
-  - if @post.errors.any?
+= simple_form_for @template do |f|
+  - if @template.errors.any?
     #error_explanation
       %h2
-        = "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+        = "#{pluralize(@template.errors.count, "error")} prohibited this template from being saved:"
       %ul
-        - @post.erros.full_messages.each do |msg|
+        - @template.erros.full_messages.each do |msg|
           %li
             = mgs
   .form-group

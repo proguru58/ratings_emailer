@@ -1,15 +1,2 @@
-\= simple_form_for @post do |f|
-\- if @post.errors.any?
-\#error_explanation
-\%h2
-\= "\#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-\%ul
-\- @post.erros.full_messages.each do |msg|
-\%li
-\= mgs
-\.form-group
-\= f.input :title, class: "form-control"
-\.form-group
-\= f.input :body, :as =&gt; :ckeditor, input_html: {:ckeditor =&gt; {:toolbar =&gt; 'FULL'}}, class: "form-control"
-\.form-group
-\= f.button :submit
+%h2 Edit Template
+= render "templates/form"
