@@ -4,7 +4,24 @@
   .form-inputs
     = f.input :emails, label: 'Email Address'
     = f.input :subject, label: 'Subject'
-    = f.input :html, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+    .row
+      .col-sm-9.col-md-10
+        = f.input :html, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+      .col-sm-3.col-md-2
+        = f.input :template, collection: @templates, label: 'Load From Template'
 
   .form-actions
     = f.button :submit, class: 'btn-primary'
+
+:javascript
+  $("#rating_email_template").on("change", function() {
+    request = void 0;
+    $.ajax({
+      url: "/templates/" + $(this).val() + "/fetch"
+    }).done(function(data, textStatus, jqXHR) {
+      console.log(data);
+      CKEDITOR.instances['rating_email_html'].setData(data.body);
+    }).error(function(jqXHR, textStatus, errorThrown) {
+      alert("Error:" + textStatus);
+    });
+  });

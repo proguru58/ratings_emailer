@@ -53,6 +53,17 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def fetch
+    respond_to do |format|
+      template = current_user.templates.find(params[:template_id])
+      if
+        format.json { render json: template }
+      else
+        format.json { render json: '', status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def template_params
