@@ -6,7 +6,7 @@
           %h2= template.title
           %h6= template.created_at.strftime('%b %d, %Y')
         %div
-          = template.body
+          = template.body.html_safe
         .text-center
           = link_to "READ MORE", template_path(template)
         %br/
