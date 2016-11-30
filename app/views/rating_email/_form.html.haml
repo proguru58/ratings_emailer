@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :emails, label: 'Email Address'
     = f.input :subject, label: 'Subject'
-    = f.cktext_area :html, ckeditor: { language: 'us'}, id: 'ckeditor'
+    = f.input :html, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
 
   .form-actions
     = f.button :submit, class: 'btn-primary'

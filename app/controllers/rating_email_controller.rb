@@ -1,5 +1,6 @@
 class RatingEmailController < ApplicationController
   def index
+    @templates = current_user.templates
   end
 
   def send_email
