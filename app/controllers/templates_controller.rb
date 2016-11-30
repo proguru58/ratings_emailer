@@ -3,7 +3,7 @@ class TemplatesController < ApplicationController
 
   # Index action to render all templates
   def index
-    @templates = Template.all
+    @templates = current_user.templates
   end
 
   # New action for creating template
@@ -14,6 +14,7 @@ class TemplatesController < ApplicationController
   # Create action saves the template into database
   def create
     @template = Template.new
+    @template.user = current_user
     if @template.update(template_params)
       flash[:notice] = "Successfully created template!"
       redirect_to template_path(@template)
