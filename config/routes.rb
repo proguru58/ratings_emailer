@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'notifications/track_email_open'
-  get 'notifications/member/:member/rating/:stars' => 'notifications#rating', :as => 'notifications_rating'
+  get 'notifications/member/:member/rating/:stars/:token' => 'notifications#rating', :as => 'notifications_rating'
 
   get 'rating_email/index'
   post 'rating_email/send_email'
