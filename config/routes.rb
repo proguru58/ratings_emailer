@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'notifications/track_email_open'
   get 'notifications/member/:member/rating/:stars/:token' => 'notifications#rating', :as => 'notifications_rating'
 

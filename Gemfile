@@ -33,6 +33,8 @@ gem 'simple_form'
 # HTML input box
 gem 'ckeditor', '4.1.3'
 
+gem 'rails_admin', '~> 1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
