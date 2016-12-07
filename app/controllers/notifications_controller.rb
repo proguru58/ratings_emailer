@@ -16,6 +16,9 @@ class NotificationsController < ApplicationController
 
   def rating
     member = User.find(params[:member])
+    message = Message.find_by_token(params[:token])
+    message.update_rating(params[:stars])
+
     case params[:stars]
     when '1', '2', '3'
       redirect_to member.negative_rating_link
