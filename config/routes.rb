@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     get 'fetch'
   end
 
+  resources :messages do
+    get 'fetch'
+  end
+
   devise_for :users
   get 'home/index'
 

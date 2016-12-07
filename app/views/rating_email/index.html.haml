@@ -1,22 +1,3 @@
 %h1 Rating Email
 
 = render 'form'
-
-%h3 Messages History
-
-%table.table.table-striped
-  %tr
-    %th.span2= 'Sent'
-    %th.span1= 'Email'
-    %th.span1= 'Subject'
-    %th.span2= 'Content'
-    %th.span2= 'Status'
-    %th.span2= 'Rating'
-  - @messages.each do |m|
-    %tr
-      %td= m.created_at
-      %td= m.email
-      %td= m.subject
-      %td= m.content.html_safe
-      %td= m.status
-      %td= m.rating
