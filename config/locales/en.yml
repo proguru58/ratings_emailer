@@ -23,6 +23,8 @@ en:
   hello: "Hello world"
   brand:
     name: "Ratings Emailer"
+  admin:
+    link: Admin
   account:
     edit:
       link: Account
