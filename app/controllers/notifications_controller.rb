@@ -13,4 +13,25 @@ class NotificationsController < ApplicationController
       end
     end
   end
+
+  def rating_1
+    redirect_to current_user.negative_rating_link
+  end
+
+  def rating_2
+    redirect_to current_user.negative_rating_link
+  end
+
+  def rating_3
+    redirect_to current_user.negative_rating_link
+  end
+
+  def rating_4
+    redirect_to current_user.positive_rating_link
+  end
+
+  def rating_5
+    redirect_to current_user.positive_rating_link
+  end
+
 end

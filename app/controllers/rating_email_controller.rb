@@ -9,7 +9,7 @@ class RatingEmailController < ApplicationController
     subject = params[:rating_email][:subject]
     token =  SecureRandom.urlsafe_base64(nil, false)
 
-    RatingsMailer.send_ratings(email, subject, content, token, current_user.positive_rating_link, current_user.negative_rating_link).deliver
+    RatingsMailer.send_ratings(email, subject, content, token).deliver
 
     message = Message.create(:content => content, :email => email, :subject => subject, :status => 'delivered', :token => token)
     message.user = current_user
