@@ -7,7 +7,7 @@ class NotificationsController < ApplicationController
 
     respond_to do |format|
       begin
-        format.gif { render :text => 'Here' }
+        format.gif { send_data(Base64.decode64("R0lGODlhAQABAPAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="), :type => "image/gif", :disposition => "inline") }
       rescue
         format.any { render :template => 'application/errors/404', :status => :not_found }
       end
