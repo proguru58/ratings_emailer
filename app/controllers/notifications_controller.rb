@@ -15,10 +15,11 @@ class NotificationsController < ApplicationController
   end
 
   def rating
+    member = User.find(params[:member])
     if params[:stars] <= 3
-      redirect_to current_user.negative_rating_link
+      redirect_to member.negative_rating_link
     else
-      redirect_to current_user.positive_rating_link
+      redirect_to member.positive_rating_link
     end
   end
 end
