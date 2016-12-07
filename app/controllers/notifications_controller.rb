@@ -1,4 +1,6 @@
 class NotificationsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def track_email_open
     @message = Message.find_by_token(params[:message_token_id])
     @message.mark_as_read unless @message.nil?
