@@ -20,6 +20,7 @@
       url: "/templates/" + $(this).val() + "/fetch"
     }).done(function(data, textStatus, jqXHR) {
       console.log(data);
+      $("#rating_email_subject").val(data.title);
       CKEDITOR.instances['rating_email_html'].setData(data.body);
     }).error(function(jqXHR, textStatus, errorThrown) {
       alert("Error:" + textStatus);
