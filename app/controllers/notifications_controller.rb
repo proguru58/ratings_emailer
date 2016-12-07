@@ -3,12 +3,11 @@ class NotificationsController < ApplicationController
     @message = Message.find_by_token_id(params[:token_id])
     @message.mark_as_read unless @message.nil?
 
-    set_id = params[:set_id].to_i
     filename = params[:filename].gsub(/[^a-zA-Z0-9_]/,'')
 
     respond_to do |format|
       begin
-        file_path = "../../../assets/images/email/#{set_id}/#{filename}.#{params[:format]}"
+        file_path = "../../../assets/images/#{filename}.#{params[:format]}"
         file = File.open(File.expand_path(file_path, __FILE__))
         format.gif { render :text => file.read }
       rescue
