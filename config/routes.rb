@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   get 'notifications/track_email_open'
-  get 'notifications/rating_1'
-  get 'notifications/rating_2'
-  get 'notifications/rating_3'
-  get 'notifications/rating_4'
-  get 'notifications/rating_5'
+  get 'notifications/rating/:stars' => 'notifications#rating', :as => 'notifications_rating'
 
   get 'rating_email/index'
   post 'rating_email/send_email'

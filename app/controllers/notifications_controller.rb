@@ -14,24 +14,11 @@ class NotificationsController < ApplicationController
     end
   end
 
-  def rating_1
-    redirect_to current_user.negative_rating_link
+  def rating
+    if params[:stars] <= 3
+      redirect_to current_user.negative_rating_link
+    else
+      redirect_to current_user.positive_rating_link
+    end
   end
-
-  def rating_2
-    redirect_to current_user.negative_rating_link
-  end
-
-  def rating_3
-    redirect_to current_user.negative_rating_link
-  end
-
-  def rating_4
-    redirect_to current_user.positive_rating_link
-  end
-
-  def rating_5
-    redirect_to current_user.positive_rating_link
-  end
-
 end
