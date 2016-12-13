@@ -1,3 +1,3 @@
 class Subscription < ApplicationRecord
-  belongs_to :plan
+  include Koudoku::Subscription
 end
