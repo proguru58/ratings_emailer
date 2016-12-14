@@ -1,4 +1,5 @@
 class RatingEmailController < ApplicationController
+  before_filter :subscription_required
   def index
     @templates = current_user.templates
   end
@@ -17,5 +18,9 @@ class RatingEmailController < ApplicationController
 
     flash[:notice] = 'Email sent with 5 stars rating attached'
     redirect_to rating_email_index_path
+  end
+
+  def subscription_required
+    current_user.subscription.present?
   end
 end
