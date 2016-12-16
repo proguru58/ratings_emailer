@@ -23,6 +23,6 @@ class RatingEmailController < ApplicationController
   def subscription_required
     return true if current_user.subscription.plan.present?
 
-    redirect_to koudokuowner_subscriptions_path(current_user)
+    redirect_to koudoku.owner_subscriptions_path(current_user)
   end
 end
