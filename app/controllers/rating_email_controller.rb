@@ -1,5 +1,6 @@
 class RatingEmailController < ApplicationController
-  before_filter :subscription_required
+  before_action :subscription_required
+
   def index
     @templates = current_user.templates
   end
@@ -18,11 +19,5 @@ class RatingEmailController < ApplicationController
 
     flash[:notice] = 'Email sent with 5 stars rating attached'
     redirect_to rating_email_index_path
-  end
-
-  def subscription_required
-    return true if current_user.subscription.plan.present?
-
-    redirect_to koudoku.owner_subscriptions_path(current_user)
   end
 end

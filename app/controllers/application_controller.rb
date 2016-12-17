@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: [:negative_rating_link, :positive_rating_link])
   end
+
+  def subscription_required
+    if current_user.subscription
+      return true if current_user.subscription.plan.present?
+    end
+
+    redirect_to koudoku.owner_subscriptions_path(current_user)
+  end
 end
