@@ -8,8 +8,11 @@ class RatingEmailController < ApplicationController
   def send_email
     content = params[:rating_email][:html]
     email = params[:rating_email][:emails]
+    customer = params[:rating_email][:customer]
     subject = params[:rating_email][:subject]
     token =  SecureRandom.urlsafe_base64(nil, false)
+
+    content = content.sub("{{Customer Name}}", customer)
 
     RatingsMailer.send_ratings(email, subject, content, token, current_user).deliver
 
