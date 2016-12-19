@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
+  attr_accessor :rating
 
   belongs_to :user
 
