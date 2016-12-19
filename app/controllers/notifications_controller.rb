@@ -18,7 +18,7 @@ class NotificationsController < ApplicationController
     member = User.find(params[:member])
     message = Message.find_by_token(params[:token])
 
-    if message.rating.present?
+    if message.rating == 0
       stars = message.rating.to_s
     else
       stars = params[:stars]
