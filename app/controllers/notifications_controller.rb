@@ -19,10 +19,10 @@ class NotificationsController < ApplicationController
     message = Message.find_by_token(params[:token])
 
     if message.rating == 0
-      stars = message.rating.to_s
-    else
       stars = params[:stars]
       message.update_rating(stars)
+    else
+      stars = message.rating.to_s
     end
 
     case stars
