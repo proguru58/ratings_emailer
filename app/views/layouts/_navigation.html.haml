@@ -10,9 +10,10 @@
   .collapse.navbar-collapse
     %ul.nav.navbar-nav.navbar-right
       - if user_signed_in?
-        %li=link_to "Dashboard", main_app.rating_email_index_path
-        %li=link_to "Templates", main_app.templates_path
-        %li=link_to "Messages History", main_app.messages_path
+        - if current_user.subscribed? or current_user.is_admin?
+          %li=link_to "Dashboard", main_app.rating_email_index_path
+          %li=link_to "Templates", main_app.templates_path
+          %li=link_to "Messages History", main_app.messages_path
         %li.dropdown
           %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
             -#= render 'users/avatar', size: :tiny
