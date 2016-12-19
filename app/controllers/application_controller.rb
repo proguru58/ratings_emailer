@@ -10,9 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def subscription_required
-    if current_user.subscription
-      return true if current_user.subscription.plan.present?
-    end
+    return true if current_user.subscribed? or current_user.is_admin?
 
     redirect_to koudoku.owner_subscriptions_path(current_user)
   end
