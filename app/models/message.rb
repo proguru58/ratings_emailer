@@ -1,6 +1,4 @@
 class Message < ApplicationRecord
-  attr_accessor :rating
-
   belongs_to :user
 
   def mark_as_read
