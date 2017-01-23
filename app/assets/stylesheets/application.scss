@@ -16,9 +16,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-material-design";
 
 @import "koudoku/pricing-table";
 
 .content {
   margin-top: 70px;
 }
+
+@brand-primary: @light-green;

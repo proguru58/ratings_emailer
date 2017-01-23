@@ -26,6 +26,7 @@ gem 'aws-ses', '~> 0.6.0', require: 'aws/ses'
 
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-material-design', '~> 0.2.2'
 
 # Form
 gem 'simple_form'
