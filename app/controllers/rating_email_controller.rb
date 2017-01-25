@@ -2,6 +2,10 @@ class RatingEmailController < ApplicationController
   before_action :subscription_required
 
   def index
+    unless current_user.sender_addresses[0].present? and current_user.sender_addresses[0].ses_verified
+      flash[:notice] = 'Please add and verify your sender email address before sending Emails'
+      redirect_to sender_addresses_path
+    end
     @templates = current_user.templates
   end
 
