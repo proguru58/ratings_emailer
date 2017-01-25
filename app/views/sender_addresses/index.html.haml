@@ -1,8 +1,7 @@
 .container
-  .col-sm-10.col-sm-offset-1.col-xs-12
+  .col-xs-12
     .title
       %h2= "Sender Addresses"
-      %small= "Email addresses to send your rating emails through."
     - @sender_addresses.each do |sender_address|
       .list-group
         .list-group-item
@@ -15,5 +14,5 @@
             %h4.list-group-item-heading= sender_address.email
             %p.list-group-item-text= "Created at #{sender_address.created_at.strftime('%b %d, %Y')}"
         %br/
-  .col-sm-10.col-sm-offset-1.col-xs-12
+  .col-xs-12
     = link_to "New Sender Address", new_sender_address_path

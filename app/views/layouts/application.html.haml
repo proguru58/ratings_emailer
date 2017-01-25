@@ -15,10 +15,9 @@
     .wrapper
       .header
       .main.main-raised
-        .section.section-notifications
-          .container
-            = render 'layouts/messages'
         .section
+          .container-fluid
+            = render 'layouts/messages'
           .container
             = yield
     = render 'layouts/footer'
