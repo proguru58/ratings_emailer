@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require bootstrap-material-design
 //= require ckeditor/init
+//= require material-kit
 //= require_tree .

@@ -19,9 +19,14 @@
 @import "bootstrap-material-design";
 
 @import "koudoku/pricing-table";
+@import "material-kit";
 
 .content {
   margin-top: 70px;
 }
 
-@brand-primary: @light-green;
+.wrapper {
+  .header {
+    min-height: 150px;
+  }
+}
