@@ -21,15 +21,20 @@
 @import "koudoku/pricing-table";
 @import "material-kit";
 
-.content {
-  margin-top: 70px;
-}
-
 .wrapper {
   .header {
     min-height: 150px;
   }
   .section {
     padding: 30px 0;
+  }
+}
+
+.navbar {
+  .navbar-brand {
+    padding-top: 0;
+    img {
+      max-width: 65% !important;
+    }
   }
 }
