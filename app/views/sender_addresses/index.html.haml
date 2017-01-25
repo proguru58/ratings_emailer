@@ -1,18 +1,17 @@
-.container
-  .col-xs-12
-    .title
-      %h2= "Sender Addresses"
-    - @sender_addresses.each do |sender_address|
-      .list-group
-        .list-group-item
-          .row-action-primary
-            %i.material-icons= 'email'
-          .row-content
-            .action-secondary
-              = link_to sender_address_path(sender_address), :method => :delete do
-                %i.material-icons= 'clear'
-            %h4.list-group-item-heading= sender_address.email
-            %p.list-group-item-text= "Created at #{sender_address.created_at.strftime('%b %d, %Y')}"
-        %br/
-  .col-xs-12
-    = link_to "New Sender Address", new_sender_address_path
+.col-xs-12
+  .title
+    %h3= "Sender Addresses"
+  - @sender_addresses.each do |sender_address|
+    .list-group
+      .list-group-item
+        .row-action-primary
+          %i.material-icons= 'email'
+        .row-content
+          .action-secondary
+            = link_to sender_address_path(sender_address), :method => :delete do
+              %i.material-icons= 'clear'
+          %h4.list-group-item-heading= sender_address.email
+          %p.list-group-item-text= "Created at #{sender_address.created_at.strftime('%b %d, %Y')}"
+      %br/
+.col-xs-12
+  = link_to "New Sender Address", new_sender_address_path

@@ -1,14 +1,14 @@
-.container
-  .col-sm-10.col-sm-offset-1.col-xs-12.blog-content
-    - @templates.each do |template|
-      .col-xs-12
-        .text-center
-          %h2= template.title
-          %h6= template.created_at.strftime('%b %d, %Y')
-        %div
-          = template.body.html_safe
-        .text-center
-          = link_to "READ MORE", template_path(template)
-        %br/
-  .col-sm-10.col-sm-offset-1.col-xs-12
-    = link_to "New Template", new_template_path
+%h3 Templates
+.col-sm-10.col-sm-offset-1.col-xs-12.blog-content
+  - @templates.each do |template|
+    .col-xs-12
+      .text-center
+        %h5= template.title
+        %h6= template.created_at.strftime('%b %d, %Y')
+      %div
+        = template.body.html_safe
+      .text-center
+        = link_to "READ MORE", template_path(template)
+      %br/
+.col-sm-10.col-sm-offset-1.col-xs-12
+  = link_to "New Template", new_template_path

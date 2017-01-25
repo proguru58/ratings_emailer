@@ -1,7 +1,7 @@
 = simple_form_for @sender_address do |f|
   - if @sender_address.errors.any?
     #error_explanation
-      %h2
+      %h5
         = "#{pluralize(@sender_address.errors.count, "error")} prohibited this sender_address from being saved:"
       %ul
         - @sender_address.erros.full_messages.each do |msg|
