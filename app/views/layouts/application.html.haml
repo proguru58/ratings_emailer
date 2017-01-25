@@ -5,12 +5,31 @@
     %title RatingsEmailer
     = csrf_meta_tags
     = stylesheet_link_tag    'application', href: "https://fonts.googleapis.com/icon?family=Material+Icons"
+    = stylesheet_link_tag    'application', href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+    = stylesheet_link_tag    'application', href: "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = yield :koudoku
   %body
     = render 'layouts/navigation'
-    .container.content
+    .wrapper
+      .header
       .errors__container
         = render 'layouts/messages'
-      = yield
+      .main.main-raised
+        .section
+          .container
+            = yield
+    = render 'layouts/footer'
+
+:javascript
+  $().ready(function(){
+    // the body of this function is in assets/material-kit.js
+    window_width = $(window).width();
+
+    if (window_width >= 992){
+      big_image = $('.wrapper > .header');
+
+      $(window).on('scroll', materialKitDemo.checkScrollForParallax);
+    }
+  });

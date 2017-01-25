@@ -1,5 +1,8 @@
 .container
-  .col-sm-10.col-sm-offset-1.col-xs-12.blog-content
+  .col-sm-10.col-sm-offset-1.col-xs-12
+    .title
+      %h2= "Sender Addresses"
+      %small= "Email addresses to send your rating emails through."
     - @sender_addresses.each do |sender_address|
       .list-group
         .list-group-item
