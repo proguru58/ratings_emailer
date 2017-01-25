@@ -1,5 +1,5 @@
 class SenderAddressesController < ApplicationController
-  before_action :find_sender_address, only: [:edit, :update, :show, :delete]
+  before_action :find_sender_address, only: [:edit, :update, :show, :destroy]
   before_action :subscription_required
 
   # Index action to render all sender_addresses
@@ -18,7 +18,7 @@ class SenderAddressesController < ApplicationController
     @sender_address.user = current_user
     if @sender_address.update(sender_address_params)
       flash[:notice] = "Successfully created Sender Address!"
-      redirect_to sender_address_path(@sender_address)
+      redirect_to sender_addresses_path
     else
       flash[:alert] = "Error creating new Sender Address!"
       render :new
@@ -68,7 +68,7 @@ class SenderAddressesController < ApplicationController
   private
 
   def sender_address_params
-    params.require(:sender_address).permit(:title, :body)
+    params.require(:sender_address).permit(:email)
   end
 
   def find_sender_address

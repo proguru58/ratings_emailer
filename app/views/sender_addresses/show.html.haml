@@ -1,4 +1,3 @@
 .col-sm-11.col-xs-12.blog-content
-  %h2.text-center= @sender_address.title
+  %h2.text-center= @sender_address.email
   %h5.text-center= @sender_address.created_at.strftime('%b %d, %Y')
-  %div= raw @sender_address.body

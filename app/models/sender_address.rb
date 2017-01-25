@@ -12,11 +12,11 @@ class SenderAddress < ApplicationRecord
 
   def ses_verify_address
     unless ses_verified
-      ses.addresses.verify(self.user.email)
+      ses.addresses.verify(self.email)
     end
   end
 
   def ses_verified
-    ses.addresses.list.result.include?(self.user.email)
+    ses.addresses.list.result.include?(self.email)
   end
 end
