@@ -23,7 +23,8 @@
             - if current_user.is_admin?
               %li= link_to I18n.t('admin.link'), main_app.rails_admin_path, data: {"no-turbolink" => true}
             %li= link_to I18n.t('account.edit.link'), main_app.edit_user_registration_path
-            %li=link_to 'Subscription', koudoku.owner_subscriptions_path(current_user)
+            %li=link_to I18n.t('account.subscription.link'), koudoku.owner_subscriptions_path(current_user)
+            %li=link_to I18n.t('account.sender_address.link'), main_app.sender_addresses_path
             %li= link_to I18n.t('auth.logout.link'), main_app.destroy_user_session_path, :method => :delete
       - unless user_signed_in?
         %li= link_to I18n.t('auth.signup.link'), main_app.new_user_registration_path

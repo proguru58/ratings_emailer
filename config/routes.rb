@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     get 'pricing' => 'subscriptions#index', as: 'pricing'
   end
 
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'notifications/track_email_open'
   get 'notifications/member/:member/rating/:stars/:token' => 'notifications#rating', :as => 'notifications_rating'
@@ -15,6 +14,10 @@ Rails.application.routes.draw do
   post 'rating_email/send_email'
 
   resources :templates do
+    get 'fetch'
+  end
+
+  resources :sender_addresses do
     get 'fetch'
   end
 

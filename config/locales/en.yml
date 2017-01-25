@@ -28,6 +28,10 @@ en:
   account:
     edit:
       link: Account
+    subscription:
+      link: Subscription
+    sender_address:
+      link: Sender Address
   auth:
     signup:
       link: Signup

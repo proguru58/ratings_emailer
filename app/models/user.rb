@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :templates
+  has_many :sender_addresses
   has_many :messages
 
   def subscribed?
