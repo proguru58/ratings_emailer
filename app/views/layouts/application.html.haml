@@ -14,9 +14,10 @@
     = render 'layouts/navigation'
     .wrapper
       .header
-      .errors__container
-        = render 'layouts/messages'
       .main.main-raised
+        .section.section-notifications
+          .container
+            = render 'layouts/messages'
         .section
           .container
             = yield
