@@ -40,4 +40,16 @@
   background-color: #fff !important;
   color: #666 !important;
   padding-right: 10px;
+
+  li.user-dropdown {
+    i {
+      margin-top: -11px !important;
+      top: 0;
+      position: relative;
+      margin-right: 3px;
+      margin-bottom: -10px;
+      font-size: 40px;
+      max-width: 40px;
+    }
+  }
 }

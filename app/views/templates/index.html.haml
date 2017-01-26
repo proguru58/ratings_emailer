@@ -3,17 +3,14 @@
 .list-group
   - @templates.each do |template|
     .list-group-item
-      .row-action-primary
-        %i.material-icons= 'title'
       .row-content
-        .pull-right
-          = link_to edit_template_path(template) do
-            %i.material-icons.text-success= 'edit'
-          = link_to template_path(template), :method => :delete do
-            %i.material-icons.text-danger= 'clear'
         %h4.list-group-item-heading= template.title
         %p.list-group-item-text= truncate(template.body, :length => 100, :omission => "..." , :escape => false).html_safe
         = link_to "READ MORE", template_path(template)
+      .pull-right
+        = link_to edit_template_path(template) do
+          %i.material-icons.text-success= 'edit'
+        = link_to template_path(template), :method => :delete do
+          %i.material-icons.text-danger= 'clear'
     %hr/
-    %br/
 = link_to "New Template", new_template_path

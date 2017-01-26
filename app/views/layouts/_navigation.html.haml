@@ -11,14 +11,22 @@
     %ul.nav.navbar-nav.navbar-right
       - if user_signed_in?
         - if current_user.subscribed? or current_user.is_admin?
-          %li=link_to "Dashboard", main_app.rating_email_index_path
-          %li=link_to "Templates", main_app.templates_path
-          %li=link_to "Messages History", main_app.messages_path
-        %li.dropdown
+          %li
+            =link_to main_app.rating_email_index_path do
+              %i.material-icons= 'dashboard'
+              Dashboard
+          %li
+            =link_to main_app.templates_path do
+              %i.material-icons= 'content_paste'
+              Templates
+          %li
+            =link_to main_app.messages_path do
+              %i.material-icons= 'search'
+              Messages History
+        %li.dropdown.user-dropdown
           %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
             -#= render 'users/avatar', size: :tiny
             %i.material-icons= 'account_circle'
-            %b.caret
             .ripple-container
           %ul.dropdown-menu
             - if current_user.is_admin?
