@@ -1,5 +1,5 @@
 class TemplatesController < ApplicationController
-  before_action :find_template, only: [:edit, :update, :show, :delete]
+  before_action :find_template, only: [:edit, :update, :show, :destroy]
   before_action :subscription_required
 
   # Index action to render all templates

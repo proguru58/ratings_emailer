@@ -8,7 +8,7 @@
     = link_to image_tag("logo.png"), main_app.root_path, class: 'navbar-brand'
 
   .collapse.navbar-collapse
-    %ul.nav.navbar-nav.pull-right
+    %ul.nav.navbar-nav.navbar-right
       - if user_signed_in?
         - if current_user.subscribed? or current_user.is_admin?
           %li=link_to "Dashboard", main_app.rating_email_index_path
@@ -17,8 +17,9 @@
         %li.dropdown
           %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
             -#= render 'users/avatar', size: :tiny
+            %i.material-icons= 'account_circle'
             %b.caret
-            = current_user.email
+            .ripple-container
           %ul.dropdown-menu
             - if current_user.is_admin?
               %li= link_to I18n.t('admin.link'), main_app.rails_admin_path, data: {"no-turbolink" => true}

@@ -1,14 +1,19 @@
 %h3 Templates
-.col-sm-10.col-sm-offset-1.col-xs-12.blog-content
+%hr/
+.list-group
   - @templates.each do |template|
-    .col-xs-12
-      .text-center
-        %h5= template.title
-        %h6= template.created_at.strftime('%b %d, %Y')
-      %div
-        = template.body.html_safe
-      .text-center
+    .list-group-item
+      .row-action-primary
+        %i.material-icons= 'title'
+      .row-content
+        .pull-right
+          = link_to edit_template_path(template) do
+            %i.material-icons.text-success= 'edit'
+          = link_to template_path(template), :method => :delete do
+            %i.material-icons.text-danger= 'clear'
+        %h4.list-group-item-heading= template.title
+        %p.list-group-item-text= truncate(template.body, :length => 100, :omission => "..." , :escape => false).html_safe
         = link_to "READ MORE", template_path(template)
-      %br/
-.col-sm-10.col-sm-offset-1.col-xs-12
-  = link_to "New Template", new_template_path
+    %hr/
+    %br/
+= link_to "New Template", new_template_path

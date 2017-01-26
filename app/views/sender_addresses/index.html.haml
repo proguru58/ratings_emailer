@@ -1,8 +1,9 @@
 .col-xs-12
   .title
     %h3= "Sender Addresses"
-  - @sender_addresses.each do |sender_address|
-    .list-group
+  %hr/
+  .list-group
+    - @sender_addresses.each do |sender_address|
       .list-group-item
         .row-action-primary
           %i.material-icons= 'email'
@@ -12,6 +13,7 @@
               %i.material-icons.text-danger= 'clear'
           %h4.list-group-item-heading= sender_address.email
           %p.list-group-item-text= "Created at #{sender_address.created_at.strftime('%b %d, %Y')}"
+      %hr/
       %br/
 .col-xs-12
   = link_to "New Sender Address", new_sender_address_path
