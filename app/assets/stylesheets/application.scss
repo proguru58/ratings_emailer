@@ -55,16 +55,41 @@
 }
 
 .card {
-  .card-title {
-    small {
-      top: -23px;
-      position: relative;
-      font-size: 0.4em;
+  text-align: center;
+  .content {
+    border-radius: 6px;
+    .card-title {
+      small {
+        &:first-child {
+          top: -20px;
+        }
+        position: relative;
+        font-size: 0.4em;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 240px;
+      margin: 10px auto;
+      li {
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+      }
     }
   }
-}
-.card.card-raised {
-  .content {
-    background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+  &.card-raised {
+    border-radius: 6px;
+    .content {
+      background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+      color: #fff;
+      .card-title {
+        color: #fff;
+        small {
+          color: #fff;
+        }
+      }
+    }
   }
 }

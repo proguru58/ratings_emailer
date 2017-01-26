@@ -2,18 +2,20 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-md-2">
+      </div>
       <% @plans.each do |plan| %>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="card card-pricing <%= @subscription.plan == plan ? 'card-raised' : 'card-plain' %>">
             <div class="content">
               <h6 class="category"><%= plan.name %></h6>
-              <h1 class="card-title"><small>$</small><%= plan.price %></h1>
+              <h1 class="card-title"><small>$</small><%= plan.price.round %><small>/mo</small></h1>
               <ul>
                 <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1li>').html_safe %>
               </ul>
               <% if @subscription.plan == plan %>
                 <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
-                  <%= f.submit 'Current Plan', class: "btn btn-round", disabled: 'disabled' %>
+                  <%= f.submit 'Current Plan', class: "btn btn-round btn-white", disabled: 'disabled' %>
                 <% end %>
               <% else %>
               <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>

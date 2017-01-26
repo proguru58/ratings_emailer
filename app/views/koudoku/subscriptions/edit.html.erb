@@ -1,7 +1,8 @@
 <% if params['update'] == 'card' %>
   <%= render 'card', title: "Update Your Payment Information", url: owner_subscription_path(@owner, @subscription) %>
 <% else %>
-  <h3>Select Subscription Plan</h3>
+  <h3>Pick the best plan for you</h3>
   <%= render 'pricing_table' %>
+  <br/>
   <p>You can also <%= link_to 'cancel your subscription', cancel_owner_subscription_path(@owner, @subscription), method: :post %>.</p>
 <% end %>
