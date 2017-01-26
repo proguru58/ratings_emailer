@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:negative_rating_link, :positive_rating_link])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :negative_rating_link, :positive_rating_link])
   end
 
   def subscription_required
