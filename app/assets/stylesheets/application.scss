@@ -30,11 +30,13 @@
   }
 }
 
-.navbar {
+.navbar.navbar-default {
   .navbar-brand {
     padding-top: 0;
     img {
       max-width: 65% !important;
     }
   }
+  background-color: #fff !important;
+  color: #666 !important;
 }
