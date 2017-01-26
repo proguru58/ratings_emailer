@@ -53,3 +53,18 @@
     }
   }
 }
+
+.card {
+  .card-title {
+    small {
+      top: -23px;
+      position: relative;
+      font-size: 0.4em;
+    }
+  }
+}
+.card.card-raised {
+  .content {
+    background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+  }
+}

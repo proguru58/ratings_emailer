@@ -14,18 +14,18 @@
       %td= m.email
       %td= m.subject
       %td
-        %a{'data-toggle' =>  "modal", 'href' => "#myModal#{m.id}", "data-backdrop" => "static"}= 'View message'
+        %a{'data-toggle' =>  "modal", 'href' => "#myModal#{m.id}", "data-backdrop" => "false"}= 'View message'
         .modal.fade{'id' => "myModal#{m.id}", "role" => "dialog"}
           .modal-dialog
             .modal-content
               .modal-header
                 %button.close{"data-dismiss" => "modal", "aria-hidden" => "true"}
-                  x
-                %h3= m.subject
+                  %i.material-icons= 'clear'
+                %h4.modal-title= m.subject
               .modal-body
                 .message-content= m.content.html_safe
               .modal-footer
-                %button.btn{"data-dismiss" => "modal", "aria-hidden" => "true"}
+                %button.btn.btn-danger.btn-simple{"data-dismiss" => "modal", "aria-hidden" => "true"}
                   Close
 
       %td= m.status
