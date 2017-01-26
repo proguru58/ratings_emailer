@@ -3,6 +3,6 @@ class RatingsMailer < ApplicationMailer
     @token = token
     @content = content
     @member = member.id
-    mail(:to => to_addresses, :subject=>subject)
+    mail(:to => to_addresses, :from => "Custom <#{member.sender_addresses[0].email}>", :subject=>subject)
   end
 end
