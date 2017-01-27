@@ -21,15 +21,3 @@
           .container
             = yield
     = render 'layouts/footer'
-
-:javascript
-  $().ready(function(){
-    // the body of this function is in assets/material-kit.js
-    window_width = $(window).width();
-
-    if (window_width >= 992){
-      big_image = $('.wrapper > .header');
-
-      $(window).on('scroll', materialKitDemo.checkScrollForParallax);
-    }
-  });
