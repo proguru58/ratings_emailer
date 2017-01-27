@@ -13,14 +13,18 @@
               <ul>
                 <%= BlueCloth.new(plan.features.gsub(/\n/, "\n\n")).to_html.gsub(/<(\/?)p>/, '<\1li>').html_safe %>
               </ul>
-              <% if @subscription.plan == plan %>
+              <% if @subscription.nil? %>
+                <%= link_to Koudoku.free_trial? ? 'Start Trial' : 'Sign Up', koudoku.new_subscription_path(plan: plan.id), class: "btn btn-success btn-round" %>
+              <% else @subscription.persisted? %>
+                <% if @subscription.plan == plan %>
+                  <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
+                    <%= f.submit 'Current Plan', class: "btn btn-round btn-white", disabled: 'disabled' %>
+                  <% end %>
+                <% else %>
                 <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
-                  <%= f.submit 'Current Plan', class: "btn btn-round btn-white", disabled: 'disabled' %>
-                <% end %>
-              <% else %>
-              <%= form_for @subscription, url: owner_subscription_path(@owner, @subscription) do |f| %>
-                <%= f.hidden_field :plan_id, value: plan.id %>
-                <%= f.submit @subscription.describe_difference(plan), class: "btn btn-success btn-round" %>
+                  <%= f.hidden_field :plan_id, value: plan.id %>
+                  <%= f.submit @subscription.describe_difference(plan), class: "btn btn-success btn-round" %>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>
